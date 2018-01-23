@@ -11,7 +11,9 @@ The above solution repros an issue with the boilerplate serialization library of
 
 Issuing a request where the method signature contains a `Guid` datatype causes a `InvalidCastException`.
 
-** Works **
+Boilerplate: https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-reliable-services-communication-remoting#how-to-use-custom-serialization-with-remoting-v2
+
+**Works**
 
     POST localhost:8066/api/foo
     RESPONSE
@@ -20,7 +22,7 @@ Issuing a request where the method signature contains a `Guid` datatype causes a
         "value": "5a2835e46ca3445cb8afa8bea9e16872"
     }
 
-** Works **
+**Works**
 
     GET localhost:8066/api/foo/198f
     RESPONSE
@@ -29,7 +31,7 @@ Issuing a request where the method signature contains a `Guid` datatype causes a
         "value": "5a2835e46ca3445cb8afa8bea9e16872"
     }
 
-** Works **
+**Works**
 
     POST localhost:8066/api/bar
     RESPONSE
@@ -38,7 +40,7 @@ Issuing a request where the method signature contains a `Guid` datatype causes a
         "value": "2a660e22be4747e88fcb3f4aec7bf26d"
     }
 
-** Boom **
+**Boom**
 
     GET localhost:8066/api/bar/e712a398-c0b8-43bb-ba03-7a4fdd155b25
     EXCEPTION
