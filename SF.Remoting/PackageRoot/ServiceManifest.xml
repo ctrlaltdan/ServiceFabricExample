@@ -20,7 +20,8 @@
 
   <Resources>
     <Endpoints>
-      <Endpoint Protocol="tcp" Name="ValuesEndpoint" />
+      <Endpoint Protocol="tcp" Name="FooEndpoint" />
+      <Endpoint Protocol="tcp" Name="BarEndpoint" />
     </Endpoints>
   </Resources>
 </ServiceManifest>

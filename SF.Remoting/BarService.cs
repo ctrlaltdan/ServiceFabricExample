@@ -1,25 +1,26 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SF.Contracts;
 
 namespace SF.Remoting
 {
-    public class ValuesService : IValuesService
+    public class BarService : IBarService
     {
-        public static IList<ValuesModel> Store = new List<ValuesModel>();
+        public static IList<BarModel> Store = new List<BarModel>();
 
-        public Task<IEnumerable<ValuesModel>> GetAllAsync()
+        public Task<IEnumerable<BarModel>> GetAllAsync()
         {
             return Task.FromResult(Store.AsEnumerable());
         }
 
-        public Task<ValuesModel> GetAsync(string key)
+        public Task<BarModel> GetAsync(Guid key)
         {
             return Task.FromResult(Store.Single(x => x.Key == key));
         }
 
-        public Task SetAsync(ValuesModel model)
+        public Task SetAsync(BarModel model)
         {
             Store.Add(model);
 

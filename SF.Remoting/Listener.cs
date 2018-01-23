@@ -21,7 +21,8 @@ namespace SF.Remoting
         {
             return new[]
             {
-                CreateListenerFor(() => new ValuesService(), "ValuesEndpoint", "ValuesListener")
+                CreateListenerFor(() => new FooService(), "FooEndpoint", "FooListener"),
+                CreateListenerFor(() => new BarService(), "BarEndpoint", "BarListener")
             };
         }
 
